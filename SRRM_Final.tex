@@ -1,0 +1,287 @@
+%This template is based on one provided by the American Physical Society for submission to its journals.
+
+\documentclass[aps,twocolumn,showpacs,preprintnumbers]{revtex4}
+
+%The following packages add LaTeX commands that make formatting and writing math easier
+
+\usepackage{graphicx}  % Include figure files
+\usepackage{subfigure}
+\usepackage{caption}
+\usepackage{subcaption}
+\linespread{1.1}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+\usepackage[T1]{fontenc}
+\usepackage{dcolumn}   % Align table columns on decimal point
+
+\usepackage{bm}        % bold math
+\usepackage{amsfonts}  % Common math fonts
+\usepackage{amsmath}   % Common math functions
+\usepackage{amssymb}   % Common math symbols
+
+%The following custom commands simplify commonly used LaTeX commands
+
+\newcommand{\pic}[2]{\begin{center} \includegraphics[scale=#1]{#2}\end{center}}
+\newcommand{\re}[1]{\mathrm{Re}\left(#1\right)}
+\newcommand{\im}[1]{\mathrm{Im}\left(#1\right)}
+\newcommand{\bdot}[1]{\dot{ \bb {#1}}}
+\newcommand{\bddot}[1]{\ddot{ \bb {#1}}}
+\newcommand{\bidot}[1]{\dot{ \bi{ #1}}}
+\newcommand{\biddot}[1]{\ddot{ \bi {#1}}}
+\newcommand{\ep}{\varepsilon}
+\newcommand{\for}{\quad \quad \mathrm{for} \quad\quad}
+\newcommand{\then}{\quad \quad \implies \quad\quad}
+\newcommand{\an}{\quad \quad \mathrm{and} \quad\quad}
+\newcommand{\ifff}{\quad \quad \mathrm{if} \quad\quad}
+\newcommand{\where}{\quad \quad \mathrm{where} \quad\quad}
+\newcommand{\dg}{^\dagger}
+\newcommand{\semi}{\quad \quad \mathrm{;} \quad\quad}
+\newcommand{\paren}[1]{\left( #1 \right)}
+\newcommand{\brac}[1]{\left[ #1 \right]}
+\newcommand{\bra}[1]{\left\langle #1 \right|}
+\newcommand{\exv}[1]{\left\langle #1 \right\rangle}
+\newcommand{\pwisein}{\left\{ \begin{array}{ll}}
+\newcommand{\pwiseout}{\end{array}\right.}
+\newcommand{\ket}[1]{\left| #1 \right\rangle}
+\newcommand{\bracket}[2]{\left\langle #1 | #2 \right\rangle}
+\newcommand{\trace}[1]{\mathrm{Tr} \left( #1 \right)}
+\renewcommand{\det}[1]{\mathrm{det}\left( #1 \right)}
+\newcommand{\del}[1]{\frac{\partial}{\partial #1}}
+\newcommand{\fulld}[1]{\frac{d}{d #1}}
+\newcommand{\fulldd}[2]{\frac{d #1}{d #2}}
+\newcommand{\dell}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\delltwo}[2]{\frac{\partial^2 #1}{\partial #2 ^2}}
+\newcommand{\bb}{\mathbf}
+\newcommand{\bi}{\boldsymbol}
+\newcommand{\eq}[1]{\begin{equation} #1 \end{equation}}
+\newcommand{\radhalf}{ \frac{ \sqrt{2}}{2}}
+\newcommand{\sigx}{\left( \begin{array}{cc} 0 & 1\\ 1 & 0 \end{array}\right)}
+\newcommand{\sigy}{\left( \begin{array}{cc} 0 & -i\\ i & 0 \end{array}\right)}
+\newcommand{\sigz}{\left( \begin{array}{cc} 1 & 0\\ 0 & -1 \end{array}\right)}
+\renewcommand{\matrix}[1]{\left( \begin{array} #1 \end{array}\right)}
+\newcommand{\thermo}[3]{\left( \frac{\partial #1}{\partial #2} \right)_{#3}}
+\newcommand{\coolfrac}[2]{\left( \frac{ #1}{ #2} \right)}
+
+%\setlength{\parskip}{\baselineskip}
+\setlength{\parindent}{10pt}
+
+\begin{document}
+
+\title{Measuring Solar Differential Rotation by Observing the Motion of Sunspots}
+
+\author{Demecio Efren Sanabria Mendez}
+
+\affiliation {\it Physics Department, University of California, Santa Barbara, CA 93106}
+
+\date{Submitted June 3, 2022}
+
+\begin{abstract}  
+
+Using sunspots to understand the differential rotation of the solar surface has the ability to uncover useful information that may provide insights on extra-solar celestial bodies. Using a telescope and a mounted camera, the differential rotation of the sun was modeled at varying latitudes by tracking the movement of various sunspots over the solar photosphere. As a result of this method, the best fit parameters that were found are given by $A = 28 \pm 5 ^o$/day, $B = 200 \pm 100 ^o$/day, $C = -1200 \pm 600 ^o$/day. The accuracy of these measured values was affected by the coordinate transformations that were used in calculations and by the inability to take into account the sun's obliquity.
+
+\end{abstract}
+
+\pacs{06.30.-k,42.25.Bs}
+
+\maketitle 
+
+
+The sun does not rotate uniformly. This fact has been observed as early as 1630, when Christoff Scheiner, through sunspot observations, observed that the suns's rotation period varies by solar latitude \cite{Paterno_2010}. This phenomena that Scheiner observed is what we now understand as differential rotation. Differential rotation does not only apply to our sun, but is also observed in the other non-rigid bodies of our solar system (i.e. Jupiter and Saturn) \cite{glatz_2009}. 
+
+An effective way of observing differential rotation has been through the observation of sunspots and their motion over the surface of the sun. After all, it was through sunspots that this phenomena was discovered in the solar system. This method of sunspot observation has been applied to star systems in order to study differential rotation of those systems \cite{JRA_2015}. Differential rotation has the ability to uncover important details about the nature of these non-rigid rotating bodies. For stars, studying their rotation can provide information about their age \cite{Reinhold_2015}, and can also help understand sub-photospheric processes in stars, such as convection or magnetic stresses \cite{Volland_1992}.
+
+In this paper, I observed sunspots across the sun's surface so that I was able to model solar differential rotation. To do so, I arranged multiple sessions for solar viewings on the roof of Broida Hall on the University of California, Santa Barbara campus for which I took photos of the sun's surface over the span of days. With these photos, I was able to observe the motion of  the sunspots at different latitudes and and was able to create a model for the differential rotation of the sun's photosphere. My model predicts that solar differential rotation varies by latitude through the relation $\omega(\theta) = A + B\sin^2{\theta} + C\sin^4{\theta}$, where the constants are $A = 28 \pm 5 ^o$/day, $B = 200 \pm 100 ^o$/day, and $C = -1200 \pm 600 ^o$/day. 
+
+\section{Approach}
+
+For each of the solar viewing sessions, I used the Celestron Super C8-plus telescope with an 8" diameter full-aperture Solar Filter(93627) and the 26mm PloSSL eyepiece. This specific eyepiece provides a 0.60$^o$ field of view. The eyepiece in particular requires some occasional cleaning, the frequency depending on the conditions in which the telescope and eyepiece is stored. Dust, eyelash oil, among other substances can dirty the surface of they eyepiece which can cause particles to be seen through the eyepiece. To clean the eyepiece, I used purified water along with very minimal dish soap and used my little finger to glide over the eyepiece to spread the cleaning agent. Afterwards, rinsing and drying the eyepiece via an air dryer is sufficient.
+
+Additionally, the NexYZ 3-Axis Universal Smartphone Adapter(Item \#81055) was attached to the eyepiece which allows for the  mounting of an IPhone 12 Pro Max 26mm camera, as well as other smartphone cameras. This camera has an aperture of f/1.6. Using the application RAW+, I was able to use manual camera settings so that the optimal ISO and Shutter speed settings may be used that allows for the best image resolution. Under Ideal conditions(clear skies) I found that the best ISO and shutter speed settings were 320 and 1/20000 respectively. However, varying weather conditions did affect the ISO and shutter speed settings that I used to take my pictures and so I did not generally use these settings. 
+
+To set up the telescope, the following procedure is used:
+\begin{enumerate}
+  \item  On the Roof of Broida hall, the tripod is set so that the wedge in which the cable is wrapped around faces north.
+  \begin{itemize}
+      \item The eastern and western walls of Broida hall can be used as a guide to align the telescope with sufficient accuracy for the solar viewings.
+  \end{itemize}
+  \item The drive base needs to be angled so that the fork arms of the telescope are aiming north. Since Goleta is at 34.4$^o$ latitude, then we angle the base by 34.4$^o$ to ensure that the fork arms are aiming north. 
+  \item  To level the base of the telescope with the ground, I used a bubble level and adjustable tripod legs to do this. Unfortunately, the built-in bubble level on my telescope seems to be damaged and instead I used an external one that I can place on the base.
+  \item Before aiming the telescope at the sun, to avoid damaging the telescope the solar filter was put on at this point, and the finder scope was covered with a paper cup.
+  \item At this point, the clock drive can be plugged in, which will provide the tracking abilities. To see if the telescope is properly tracking, I can wait about 5-10 minutes and check the eyepiece again to see if the sun remains in view. If not, then I would unplug the clock drive and repeat steps 1-3 \cite{comment 1}. 
+  \item This telescope allows for adjustment in declination and right ascension, which allow me to center the sun on the telescope. Instead of looking directly at the sun when aiming the telescope, to avoid any hazard to my eyesight, I instead chose to aim the telescope by looking at the shadow that the main telescope tube makes with the floor. To ensure that the axis of the main tube is aligned, I adjust in both the declination and right ascension until the shadow is approximately circular or, alternatively, until the area of the main tube's shadow is at a minimum. At this point,the fine adjust in the declination or the right ascension may be used until the sun is centered on the telescope.
+  \item Once the sun is centered, I mounted the smartphone adapter and the camera onto the eyepiece, which can be adjusted until the sun is in view of the camera.
+\end{enumerate}
+
+After following the above procedure, multiple photos were taken of the sun. The picture that provided the best resolution of the sunspots is the one that was used for that day's data. The sunspots that were picked for measurement were chosen based on two requisites: (a) the sunspots are present in at least two of pictures that were taken on different days and (b) the sunspot is clear to see and track in each picture so that an angular velocity can be found through their displacement. In total, there was six viewing sessions that I was able to plan out, however the first and last sessions did not provide any useful data \cite{comment 2}.
+
+%%%%%%%%%%%%%%%%%%%%Figure  1  begin %%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{figure}[!h]
+\begin{subfigure}
+        \centering
+         \includegraphics[width=3.0in]{5.17.PNG}\\
+         \subcaption{\label{pic 5.17} (a) Data taken 5/17/2022 at 6:05 pm PST}
+\end{subfigure}
+\begin{subfigure}
+        \centering
+         \includegraphics[width=3.0in]{5.19.PNG}\\
+         \subcaption{\label{pic 5.19}(b) Data taken 5/19/2022 at 4:28 pm PST}
+\end{subfigure}
+%
+\caption{\label{picture examples} (a) and (b) showcase the motion of the sunspots on the sun's surface over the span of two days. Notice that the the sunspot on the rightmost side of the sun's surface in figure (a) disappears by the time that the the picture in figure (b) was taken. This is an example of a sunspot that was not tracked for the final measurement.}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%% Figure  1  end %%%%%%%%%%%%%%%%%%%%%%%
+
+
+My model is based of the differential rotation equation given by H.B. Snodgrass and R.K. Ulrich \cite{snod_1990},
+
+\begin{align}
+    \omega(\theta) = A + B\sin^2{\theta} + C\sin^4{\theta}
+\end{align}
+
+This model assumes a constant rotation rate at any latitude.
+
+To find the rotation rates of the sunspots, I will measure the angular displacement of the sunspots from their initial positions with the following equation;
+
+\begin{multline}
+    \Phi = \arccos(\sin{(\phi_i)}\sin{(\phi_{i+1})}\\
+    + \cos{(\phi_i)}\cos{(\phi_{i+1})}\cos{(\theta_i-\theta_{i+1})}) 
+\end{multline}
+
+I defined the two angles of rotation to be the longitudinal $\phi$ and latitudinal $\theta$ angles. $\theta=0^o$ is defined at the sun's equator so that the domain of the latitude is $-90^o<\theta<90^o$. The $\phi=0^o$ is defined to be the center of the sun's disk on the photograph so that $-90^o<\theta<90^o$. 
+
+Here $\phi_i$ denotes the initial longitude of the $i$th sunspot and $\phi_{i+1}$ is the longitude of the same sunspot on a following day. The same also applies for the $\theta_i$ parameter. 
+
+An example of the sunspots that I am observing is present in figure \ref{picture examples}. Notice that the the sunspot on the rightmost side of the sun's surface in figure 1(a) disappears by the time that the the picture in figure 1(b) was taken. This is an example of a sunspot that was not tracked for the final measurement. 
+
+With this convention of $\theta$ and $\phi$ angles, the 3 dimensional coordinates of the sunspots on the sun is given by Cartesian coordinates through the transformation,
+
+\begin{align}
+    x &= \cos{\theta}\cos{\phi}\\
+    y &= \cos{\theta}\sin{\phi}\\
+    z &= \sin{\theta}
+\end{align}
+
+
+
+%%%%%%%%%%%%%%%%%%%%Figure  2  begin %%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+%
+\includegraphics[width=3.0in]{diagram.jpg}
+%
+\caption{\label{diagram} 
+Parameterization of the solar surface using Cartesian coordinates. The origin of the plot is at the center of the sun which was set to have a radius of unity in the images. To recover distance from these coordinates then one can just multiply the $x$ and $y$ coordinates with solar radius. In other words, the coordinates denote a fraction of the solar radius. The coordinates acquired from the images will then be transformed into spherical polar coordinates as outlined in equations (6) and (7).}
+%
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%Figure 2 end %%%%%%%%%%%%%%%%%%%%%%%
+
+Here the z axis is the vertical axes, the x axis is the horizontal axis, and the y axis is the axis normal to the picture. The variables x, y, and z can take the range of values spanning [-1,1] and are dimensionless so that the sun is assigned a radius of unity. To recover distance from these coordinates then one can just multiply by the solar radius. In other words, the coordinates denote a fraction of the solar radius. Figure \ref{diagram} showcases how the surface was parameterized using two dimensional Cartesian coordinates. The origin is at the center of the sun. From equation (5) we see that $\theta=\arcsin{z}$. We can also rewrite $\theta$ as $\theta = \arccos{\sqrt{1-z^2}}$. These relations allow us to rewrite equation (3) as $\phi = \arccos{(x/\sqrt{1-z^2})}$. Thus, I found a relation between longitudinal and latitudinal parameters and the 2-dimensional parameters $x$ and $z$.
+
+\begin{align}
+    \theta &= \arcsin{z}\\
+    \phi &= \arccos{(x/\sqrt{1-z^2})}
+\end{align}
+
+\section{Results}
+
+Table \ref{data} showcases the $x$ and $y$ values seven of the nine observed sunspots. The uncertainty in both the vertical and horizontal directions is given by the radius of sunspot that is being observed. The sunspots were all approximated to be circular so that both the $x$ and $z$ coordinates have the same uncertainty $\sigma$. 
+
+\begin{table}[h!]
+    \begin{subtable}
+    \centering
+        \begin{tabular}{l |l | l | l}
+        Sunspot number & x & y & \sigma\\
+        \hline \hline
+        1 &-0.81 & 0.42 & 0.02 \\ 
+        2 &-0.76 & 0.38 & 0.02 \\ 
+        3 &-0.16 & 0.23 & 0.01 \\ 
+        4 &-0.52 & -0.17 & 0.02 \\ 
+        5 &-0.47 & -0.17 & 0.02 \\ 
+        6 &-0.58 & -0.27 & 0.05 \\ 
+        7 &-0.51 & -0.30 & 0.02 \\ 
+       \end{tabular}\\
+       \subcaption{(a) Data taken 5/17/2022 at 6:05 pm PST}
+       \label{5/17}
+    \end{subtable}
+    \begin{subtable}
+    \centering
+        \begin{tabular}{l | l | l | l}
+        Sunspot number & x & y & \sigma\\
+        \hline \hline
+        1&-0.64 & 0.25 & 0.02 \\ 
+        2&-0.53 & 0.26 & 0.02 \\ 
+        3&0.2 & 0.2 & 0.1 \\ 
+        4&-0.09 & -0.26 & 0.02 \\ 
+        5&-0.05 & -0.25 & 0.01 \\ 
+        6&-0.17 & -0.37 & 0.06 \\ 
+        7&-0.08 & -0.38 & 0.03 \\ 
+        \end{tabular}\\
+        \subcaption{(b) Data taken 5/19/2022 at 4:28 pm PST}
+        \label{5/19}
+     \end{subtable}
+     \caption{Positions of sunspots and their uncertainties taken on two separate days. Both the sunspot positions and uncertainties are dimensionless. The uncertainty on these values is given by the radius of the sunspot, which was approximate to be circular so that both the $x$ and $y$ parameters have the same uncertainty \sigma.}
+     \label{5/19}
+\label{data}
+\end{table}
+
+The sun's obliquity to the ecliptic plane is non-zero, which means that in the pictures, the sun's rotation axis will not be vertically upright. Instead the axis of rotation is at an angle with the horizontal. Due to an inability to find a way to tell the current orientation of the sun's axis to the earth, I instead have to assign a uncertainty on latitude measurements based on this knowledge of the sun's axial tilt, which is 7.25$^o$ \cite{nasa_sun}, which is greater than any latitudinal uncertainty due to the radius of the sunspots. Thus, there is an uncertainty of $7.25^o$ in the latitude values of the observed sunspots. For the longitudinal uncertainties, these are determined by the uncertainty in $x$.
+
+The angular velocity of these sunspots was then found by calculating the angular displacements using equation (2) and dividing these values with the time difference for each of the corresponding displacements. Due to the obliquity of the sun, the latitude reading on each of the initial and the subsequent positions of the sunspots were different. Thus, the latitude position assigned to each of the measured angular velocities is the average latitude between the two points.
+
+To carry out any calculations and plots, I used Python with the imported packages QExPy, matplotlib.pyplot, and NumPy. Using the fitting function in QExPy I was able to find the following best fit parameters for equation (1) and the best fit plot based on my data: $A = 28 \pm 5 $ $^o$/day, $B = 200 \pm 100$ $^o$/day, $C &= -1200 \pm 600$ $^o$/day, which corresponds to the plot in figure \ref{final graph}. 
+
+
+\section{Discussion}
+
+These results are inconsistent with the values measured by H.B. Snodgrass and R.K. Ulrich \cite{snod_1990}, which have measured the values of the parameters to be,
+
+\begin{align*}
+    A &= 14.71 \pm 0.05 \text{ $^o$/day}\\
+    B &= -2.39 \pm 0.19 \text{ $^o$/day}\\
+    C &= -1.78 \pm 0.25 \text{ $^o$/day}
+\end{align*}
+
+I think that the precision of the measured values was severely limited by the inability to find a method that could tell the orientation of the Sun's axis of rotation relative to Earth. Based on the variation of the difference of latitudinal values for the same sunspots, I believe that employed method was ineffective at getting good measurements for the positions of sunspots. Additionally, equations (6) and (7) attempt at gaining a 3-dimensional information from 2-dimensional parameters allows for many sources of error that will result in noticeable inaccuracies in observations. There is probably a large amount of information that is lost through this coordinate transformation since it does not take into account the $y$ coordinate of any of the sunspots. 
+
+ %%%%%%%%%%%%%%%%%%%%Figure 3  begin %%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+%
+\includegraphics[width=3.5in]{final graph.pdf}
+%
+\caption{\label{final graph} Best fit plot based on my gathered data with best fit parameters A = 28 \pm 5 $^o$/day, B = 200 \pm 100 $^o$/day, C = -1200 \pm 600 $^o$/day. These parameters are incosistent with the values measured by H.B. Snodgrass and R.K. Ulrich.}
+%
+\end{figure}
+%%%%%%%%%%%%%%%%%%%% Figure  3  end %%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+To improve the method used here, there has to be two changes. (1) A procedure for finding the orientation of the sun's axis with respect to Earth must be established to reduce uncertainties in latitudinal values of sunspots, and (2) a thorough revision of finding three dimensional parameters from the pictures must take place.  
+
+In summary, I have measured the parameters of the differential rotation model to be $A = 28 \pm 5 ^o$/day, $B = 200 \pm 100 ^o$/day, $C = -1200 \pm 600 ^o$/day. This measurement is not consistent with the values measured by H.B. Snodgrass and R.K. Ulrich which is indicative of many sources of error within the calculations that were undertaken to get these measurements. To improve the method presented here, there must be major changes in the way that these values were calculated. 
+
+I would like to thank Professor Fygenson for helping me come up with an independent measurement idea that I have enjoyed undertaking and the Teaching Assistants, Especially Vishank Jain-Sharma for accompanying me in most of the viewing sessions and answering my questions. 
+
+\begin{thebibliography}{10}
+
+\bibitem{Paterno_2010} L. Paterno, ``The Solar Differential Rotation: A Historical View'', {\it Astrophysics and Space Science} {\bf 328}, 269-277 (2010).
+
+\bibitem{glatz_2009} G.A. Glatzmaier {\it et al.},  ``Differential Rotation in Giant Planets Maintained
+by Density-Stratified Turbulent Convection'', {\it Geophysical and Astrophysical Fluid Dynamics} {\bf 103}, 31-51 (2009).
+
+\bibitem{JRA_2015} J. R. A. Davenport {\it et al.},  ``Detecting Differential Rotation and Starspot Evolution on the M Dwarf GJ 1243 with Kepler'', {\it Astrophysical Journal} {\bf 806}, 212 (2015).
+
+\bibitem{Reinhold_2015} T. Reinhold \&  L. Gizon,  ``Rotation, Differential Rotation, and Gyrochronology of Active Kepler Stars⋆'', {\it Astronomy and Astrophysics} {\bf 583}, A65 (2015).
+
+\bibitem{Volland_1992} H. Volland, ``Solar Differential Rotation due to Magnetic Stresses'', {\it Astronomy and Astrophysics} {\bf 259}, 663-668 (1992).
+
+\bibitem{comment 1} This step is optional. Since I am taking photographs, I do not really need the sun to remain centered for long. Additionally, The sun itself does not move fast enough across my view to cause any blur or affect the resolution of my photographs in any non-negligible capacity.
+
+\bibitem{comment 2} The first session that took place on 5/6/2022 was mainly for learning how to operate the telescope properly as well as to asses the condition of the telescope before any measurements are done. The last viewing session on 5/24/2022 did provide pictures but the sunspots observed are different than the previously pictured ones. Since I was not able to do any more viewing sessions, I was not able to use this photo for any measurements.
+
+\bibitem{snod_1990} H.B. Snodgrass \&  R. K. Ulrich  ``Rotation Of Doppler Features In The Solar Photosphere'', {\it Astrophysical Journal} {\bf 351}, 309-316 (1990).
+
+\bibitem{nasa_sun} NASA  Sun Fact Sheet, https://nssdc.gsfc.nasa.gov/planetary/factsheet/sunfact.html (Accessed June 1, 2022).
+
+\end{thebibliography}
+\end{document}
